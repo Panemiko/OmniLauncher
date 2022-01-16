@@ -1,5 +1,5 @@
 import type { App } from 'electron'
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, ipcMain } from 'electron'
 import isDev from 'electron-is-dev'
 
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string
@@ -27,6 +27,7 @@ export default class Application {
     async run(): Promise<void> {
         await this.app.whenReady()
         await this.loadAppEvents()
+        await this.loadIpcEvents()
         await this.createMainWindow()
         await this.loadContent()
     }
@@ -66,6 +67,12 @@ export default class Application {
             if (BrowserWindow.getAllWindows().length === 0) {
                 await this.createMainWindow()
             }
+        })
+    }
+
+    private async loadIpcEvents(): Promise<void> {
+        ipcMain.on('window-close', () => {
+            BrowserWindow.getFocusedWindow()?.close()
         })
     }
 
