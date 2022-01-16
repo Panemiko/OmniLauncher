@@ -3,6 +3,7 @@ import { app, BrowserWindow } from 'electron'
 import isDev from 'electron-is-dev'
 
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string
+declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string
 
 export default class Application {
 
@@ -41,7 +42,8 @@ export default class Application {
             frame: false,
             fullscreenable: false,
             webPreferences: {
-                devTools: isDev
+                devTools: isDev,
+                preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY
             }
         })
     }
