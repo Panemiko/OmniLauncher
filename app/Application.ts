@@ -38,6 +38,7 @@ export default class Application {
             title: 'Omni Launcher',
             width: 1100,
             height: 700,
+            frame: false,
             fullscreenable: false,
             webPreferences: {
                 devTools: isDev
@@ -58,6 +59,11 @@ export default class Application {
     private async loadAppEvents(): Promise<void> {
         this.app.on('window-all-closed', () => {
             this.app.quit()
+        })
+        this.app.on('activate', async () => {
+            if (BrowserWindow.getAllWindows().length === 0) {
+                await this.createMainWindow()
+            }
         })
     }
 
