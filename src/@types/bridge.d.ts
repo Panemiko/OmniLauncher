@@ -1,4 +1,4 @@
-import Api from '../../app/Api'
+import Api from '../Api'
 
 declare global {
     interface Window {
