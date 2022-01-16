@@ -25,6 +25,7 @@ export default class Application {
      */
     async run(): Promise<void> {
         await this.app.whenReady()
+        await this.loadAppEvents()
         await this.createMainWindow()
         await this.loadContent()
     }
@@ -49,6 +50,15 @@ export default class Application {
      */
     private async loadContent(): Promise<void> {
         this.win.loadURL(MAIN_WINDOW_WEBPACK_ENTRY)
+    }
+
+    /**
+     * Loads the electron app events
+     */
+    private async loadAppEvents(): Promise<void> {
+        this.app.on('window-all-closed', () => {
+            this.app.quit()
+        })
     }
 
 }
