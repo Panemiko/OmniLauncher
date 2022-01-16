@@ -26,6 +26,7 @@ export default class Application {
     async run(): Promise<void> {
         await this.app.whenReady()
         await this.createMainWindow()
+        await this.loadContent()
     }
 
     /**
@@ -41,6 +42,13 @@ export default class Application {
                 devTools: isDev
             }
         })
+    }
+
+    /**
+     * Loads the main window content
+     */
+    private async loadContent(): Promise<void> {
+        this.win.loadURL(MAIN_WINDOW_WEBPACK_ENTRY)
     }
 
 }
