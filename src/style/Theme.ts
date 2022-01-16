@@ -1,5 +1,19 @@
 
-const Theme = {
+export interface ThemeProperties {
+    background: string
+    currentLine: string
+    foreground: string
+    comment: string
+    cyan: string
+    green: string
+    orange: string
+    pink: string
+    purple: string
+    red: string
+    yellow: string
+}
+
+const Theme: ThemeProperties = {
     background: '#282a36',
     currentLine: '#44475a',
     foreground: '#f8f8f2',
