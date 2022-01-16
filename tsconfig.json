@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    // Compiler
+    "target": "es2021",
+    "module": "commonjs",
+    "lib": [
+      "es2021",
+      "DOM"
+    ],
+    // Features
+    "strictPropertyInitialization": false,
+    "experimentalDecorators": true,
+    "allowUnreachableCode": false,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "removeComments": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "jsx": "react",
+    // Paths
+    "outDir": "./dist",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./@types"
+    ],
+  }
+}
