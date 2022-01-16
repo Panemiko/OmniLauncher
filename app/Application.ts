@@ -44,7 +44,9 @@ export default class Application {
             fullscreenable: false,
             webPreferences: {
                 devTools: isDev,
-                preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY
+                preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+                contextIsolation: true,
+                nodeIntegration: false
             }
         })
     }

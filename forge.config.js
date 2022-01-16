@@ -16,7 +16,7 @@ module.exports = {
                             js: './src/index.tsx',
                             name: 'main_window',
                             preload: {
-                                js: './src/preload.ts'
+                                js: './app/preload.ts'
                             }
                         }
                     ]

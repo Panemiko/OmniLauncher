@@ -11,5 +11,6 @@ export const Container = styled.header`
 export const WindowTitle = styled.h1`
     color: ${props => props.theme.comment};
     text-align: center;
-    font-size: 16px; 
+    font-size: 16px;
+    margin: auto;
 `
