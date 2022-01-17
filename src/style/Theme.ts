@@ -1,6 +1,7 @@
 
 export interface ThemeProperties {
     background: string
+    background2: string
     currentLine: string
     foreground: string
     comment: string
@@ -14,7 +15,8 @@ export interface ThemeProperties {
 }
 
 const Theme: ThemeProperties = {
-    background: '#282a36',
+    background: '#1C1E26',
+    background2: '#282a36',
     currentLine: '#44475a',
     foreground: '#f8f8f2',
     comment: '#6272a4',
