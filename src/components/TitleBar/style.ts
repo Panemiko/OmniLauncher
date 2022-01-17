@@ -35,13 +35,19 @@ export const IconsContainer = styled.div`
 
 export const Icon = styled.button`
     height: 100%;
-    width: 35px;
+    width: 45px;
 
     background: none;
     border: none;
-    color: ${props => props.theme.comment};
 
     -webkit-app-region: none;
+
+    svg {
+        height: 16px;
+        width: 16px;
+
+        fill: ${props => props.theme.comment};
+    }
 
     :hover {
         background: ${props => props.theme.darker};
