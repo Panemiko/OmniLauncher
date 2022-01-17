@@ -40,7 +40,7 @@ export default class Application {
             title: 'Omni Launcher',
             width: 1100,
             height: 700,
-            frame: false,
+            titleBarStyle: 'hidden',
             fullscreenable: false,
             webPreferences: {
                 devTools: isDev,
