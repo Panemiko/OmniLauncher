@@ -75,14 +75,12 @@ export default class Application {
 
     private async loadIpcEvents(): Promise<void> {
         ipcMain.on('window-close', () => BrowserWindow.getFocusedWindow()?.close())
-        ipcMain.on('window-maximize', () => {
-            const currentWin = BrowserWindow.getFocusedWindow() as BrowserWindow
-            if (currentWin.isMaximized()) currentWin.unmaximize()
-            else currentWin?.maximize()
-        })
+        ipcMain.on('window-maximize', () => BrowserWindow.getFocusedWindow()?.maximize())
+        ipcMain.on('window-unmaximize', () => BrowserWindow.getFocusedWindow()?.unmaximize())
         ipcMain.on('window-minimize', () => BrowserWindow.getFocusedWindow()?.minimize())
+        ipcMain.handle('window-is-maximized', () => BrowserWindow.getFocusedWindow()?.isMaximized())
 
-        ipcMain.handle('os-plataform', () => {
+        ipcMain.handle('os-get-plataform', () => {
             return os.platform()
         })
     }
