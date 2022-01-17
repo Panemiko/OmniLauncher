@@ -1,6 +1,7 @@
 import type { App } from 'electron'
 import { app, BrowserWindow, ipcMain } from 'electron'
 import isDev from 'electron-is-dev'
+import os from 'os'
 
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string
@@ -80,6 +81,10 @@ export default class Application {
             else currentWin?.maximize()
         })
         ipcMain.on('window-minimize', () => BrowserWindow.getFocusedWindow()?.minimize())
+
+        ipcMain.handle('os-plataform', () => {
+            return os.platform()
+        })
     }
 
 }

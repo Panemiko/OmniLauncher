@@ -5,6 +5,9 @@ const api = {
         async close() { ipcRenderer.send('window-close') },
         async maximize() { ipcRenderer.send('window-maximize') },
         async minimize() { ipcRenderer.send('window-minimize') }
+    },
+    os: {
+        async getPlataform() { return await ipcRenderer.invoke('os-plataform') }
     }
 }
 
