@@ -1,22 +1,9 @@
 
-export interface ThemeProperties {
-    background: string
-    background2: string
-    currentLine: string
-    foreground: string
-    comment: string
-    cyan: string
-    green: string
-    orange: string
-    pink: string
-    purple: string
-    red: string
-    yellow: string
-}
-
-const Theme: ThemeProperties = {
-    background: '#1C1E26',
-    background2: '#282a36',
+const Theme = {
+    darkest: '#1C1E26',
+    darker: '#282a36',
+    dark: '2D2F3E',
+    lighter: '#373949',
     currentLine: '#44475a',
     foreground: '#f8f8f2',
     comment: '#6272a4',
@@ -30,3 +17,5 @@ const Theme: ThemeProperties = {
 }
 
 export default Theme
+
+export type ThemeProperties = typeof Theme
