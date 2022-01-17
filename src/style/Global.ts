@@ -10,7 +10,6 @@ const GlobalStyle = createGlobalStyle`
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: ${props => props.theme.background};
 }
 
 `
