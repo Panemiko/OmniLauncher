@@ -8,7 +8,7 @@ export const Container = styled.header`
     
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 135px auto 135px;
     grid-template-areas: '- WindowTitle DefaultActionsContainer';
 
     background: ${props => props.theme.darkest};
@@ -33,9 +33,11 @@ export const DefaultActionsContainer = styled.div`
     text-align: right;
 `
 
-export const DefaultActions = styled.button`
+export const DefaultAction = styled.button<DefaultActionProps>`
     height: 100%;
     width: 45px;
+
+    display: ${props => (props.hidden) ? 'none' : ''};
 
     background: none;
     border: none;
@@ -49,7 +51,16 @@ export const DefaultActions = styled.button`
         fill: ${props => props.theme.comment};
     }
 
-    :hover {
-        background: ${props => props.theme.darker};
+    &:hover {
+        svg {
+            fill: ${props => props.theme.foreground};
+        }
+
+        background: ${props => (props.isClose) ? props.theme.red : props.theme.darker};
     }
 `
+
+export interface DefaultActionProps {
+    hidden?: boolean
+    isClose?: boolean
+}

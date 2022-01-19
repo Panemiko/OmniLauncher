@@ -1,6 +1,6 @@
 import React from 'react'
 import { VscChromeMinimize, VscChromeRestore, VscChromeClose } from 'react-icons/vsc'
-import { Container, WindowTitle, DefaultActionsContainer, DefaultActions } from './style'
+import { Container, WindowTitle, DefaultActionsContainer, DefaultAction } from './style'
 
 export default function TitleBar() {
 
@@ -10,9 +10,9 @@ export default function TitleBar() {
         <Container>
             <WindowTitle>Omni Launcher</WindowTitle>
             <DefaultActionsContainer>
-                <DefaultActions onClick={win.minimize}><VscChromeMinimize /></DefaultActions>
-                <DefaultActions onClick={win.maximize}><VscChromeRestore /></DefaultActions>
-                <DefaultActions onClick={win.close}><VscChromeClose /></DefaultActions>
+                <DefaultAction onClick={win.minimize}><VscChromeMinimize /></DefaultAction>
+                <DefaultAction onClick={win.maximize}><VscChromeRestore /></DefaultAction>
+                <DefaultAction isClose onClick={win.close}><VscChromeClose /></DefaultAction>
             </DefaultActionsContainer>
         </Container>
     )
