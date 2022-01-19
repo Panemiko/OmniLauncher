@@ -9,7 +9,7 @@ export const Container = styled.header`
     display: grid;
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: '- WindowTitle IconsContainer';
+    grid-template-areas: '- WindowTitle DefaultActionsContainer';
 
     background: ${props => props.theme.darkest};
 
@@ -25,15 +25,15 @@ export const WindowTitle = styled.h1`
     font-size: 12px;
 `
 
-export const IconsContainer = styled.div`
+export const DefaultActionsContainer = styled.div`
     height: 100%;
     
-    grid-area: IconsContainer;
+    grid-area: DefaultActionsContainer;
 
     text-align: right;
 `
 
-export const Icon = styled.button`
+export const DefaultActions = styled.button`
     height: 100%;
     width: 45px;
 
