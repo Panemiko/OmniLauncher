@@ -1,18 +1,20 @@
 import React from 'react'
-import { VscChromeMinimize, VscChromeRestore, VscChromeClose } from 'react-icons/vsc'
+import { VscChromeMinimize, VscChromeMaximize, VscChromeRestore, VscChromeClose } from 'react-icons/vsc'
 import { Container, WindowTitle, DefaultActionsContainer, DefaultAction } from './style'
+import useElectron from '../../hooks/useElectron'
+import useEventListener from '../../hooks/useEventListener'
 
 export default function TitleBar() {
 
-    const win = window.api.window
+    const electron = useElectron()
 
     return (
         <Container>
             <WindowTitle>Omni Launcher</WindowTitle>
             <DefaultActionsContainer>
-                <DefaultAction onClick={win.minimize}><VscChromeMinimize /></DefaultAction>
-                <DefaultAction onClick={win.maximize}><VscChromeRestore /></DefaultAction>
-                <DefaultAction isClose onClick={win.close}><VscChromeClose /></DefaultAction>
+                <DefaultAction tabIndex={-1} onClick={electron.window.minimize}><VscChromeMinimize /></DefaultAction>
+                <DefaultAction tabIndex={-1} onClick={electron.window.maximize}><VscChromeMaximize /></DefaultAction>
+                <DefaultAction tabIndex={-1} isClose onClick={electron.window.close}><VscChromeClose /></DefaultAction>
             </DefaultActionsContainer>
         </Container>
     )
