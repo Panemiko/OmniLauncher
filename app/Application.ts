@@ -41,6 +41,7 @@ export default class Application {
             title: 'Omni Launcher',
             width: 1100,
             height: 700,
+            backgroundColor: '#1F1A26',
             titleBarStyle: 'hidden',
             fullscreenable: false,
             webPreferences: {
@@ -66,6 +67,7 @@ export default class Application {
         this.app.on('window-all-closed', () => {
             this.app.quit()
         })
+
         this.app.on('activate', async () => {
             if (BrowserWindow.getAllWindows().length === 0) {
                 await this.createMainWindow()
@@ -74,11 +76,26 @@ export default class Application {
     }
 
     private async loadIpcEvents(): Promise<void> {
-        ipcMain.on('window-close', () => BrowserWindow.getFocusedWindow()?.close())
-        ipcMain.on('window-maximize', () => BrowserWindow.getFocusedWindow()?.maximize())
-        ipcMain.on('window-unmaximize', () => BrowserWindow.getFocusedWindow()?.unmaximize())
-        ipcMain.on('window-minimize', () => BrowserWindow.getFocusedWindow()?.minimize())
-        ipcMain.handle('window-is-maximized', () => BrowserWindow.getFocusedWindow()?.isMaximized())
+        ipcMain.on('window-close', () => {
+            BrowserWindow.getFocusedWindow()?.close()
+        })
+
+        ipcMain.on('window-maximize', () => {
+            BrowserWindow.getFocusedWindow()?.maximize()
+
+        })
+
+        ipcMain.on('window-unmaximize', () => {
+            BrowserWindow.getFocusedWindow()?.unmaximize()
+        })
+
+        ipcMain.on('window-minimize', () => {
+            BrowserWindow.getFocusedWindow()?.minimize()
+        })
+
+        ipcMain.handle('window-is-maximized', () => {
+            return BrowserWindow.getFocusedWindow()?.isMaximized()
+        })
 
         ipcMain.handle('os-get-plataform', () => {
             return os.platform()
