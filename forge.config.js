@@ -1,6 +1,7 @@
 module.exports = {
     packagerConfig: {
         name: 'Omni Launcher',
+        description: 'An enhanced Minecraft Launcher',
         executableName: 'omni-launcher'
     },
     plugins: [
