@@ -14,5 +14,6 @@ const api = {
 }
 
 export default api
+export type Api = typeof api
 
 contextBridge.exposeInMainWorld('api', api)
