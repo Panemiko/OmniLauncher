@@ -1,14 +1,14 @@
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
-import GlobalStyle from './style/Global'
+import globalStyle from './style/Global'
 import Theme from './style/Theme'
 import TitleBar from './components/TitleBar'
 
 export default function App() {
+    globalStyle()
+
     return (
-        <ThemeProvider theme={Theme}>
-            <GlobalStyle />
+        <div className={Theme}>
             <TitleBar />
-        </ThemeProvider>
+        </div>
     )
 }

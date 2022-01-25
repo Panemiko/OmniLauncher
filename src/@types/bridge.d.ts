@@ -1,7 +1,7 @@
-import api from '../../app/preload'
+import { Api } from '../../app/preload'
 
 declare global {
     interface Window {
-        api: typeof api
+        api: Api
     }
 }

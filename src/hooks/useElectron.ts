@@ -1,4 +1,5 @@
+import { Api } from '../../app/preload'
 
-export default function useElectron(): typeof window.api {
+export default function useElectron(): Api {
     return window.api
 }
