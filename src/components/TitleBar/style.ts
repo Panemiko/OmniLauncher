@@ -20,7 +20,7 @@ export const Container = styled('header', {
 export const WindowTitle = styled('h1', {
     gridArea: 'WindowTitle',
 
-    color: '$text',
+    color: '$contrast',
     textAlign: 'center',
     fontSize: '12px'
 })
@@ -108,6 +108,10 @@ export const DefaultAction = styled('button', {
         height: '16px',
         width: '16px',
 
+        fill: '$contrast'
+    },
+
+    '&:hover svg': {
         fill: '$text'
     },
 

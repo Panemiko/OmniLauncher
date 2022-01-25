@@ -13,7 +13,8 @@ const Theme = createTheme({
         light: '#3D344D',
         lighter: '#483D59',
         lightest: '#524566',
-        text: '#FFFFFF'
+        text: '#FFFFFF',
+        contrast: '#5D4E73'
     }
 })
 
