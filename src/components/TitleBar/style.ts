@@ -1,101 +1,134 @@
-import styled from 'styled-components'
+import { styled } from '../../style/stitches'
 
-export const Container = styled.header`
-    position: absolute;
+export const Container = styled('header', {
+    position: 'absolute',
 
-    height: 30px;
-    width: 100%;
-    
-    display: grid;
-    align-items: center;
-    grid-template-columns: 135px auto 135px;
-    grid-template-areas: 'MacOsActionsContainer WindowTitle DefaultActionsContainer';
+    height: '30px',
+    weight: '100%',
 
-    background: ${props => props.theme.darkest};
+    display: 'grid',
+    alignItems: 'center',
+    gridTemplateColumns: '135px auto 135px',
+    gridTemplateAreas: 'MacOsActionsContainer WindowTitle DefaultActionsContainer',
 
-    -webkit-user-select: none; 
-    -webkit-app-region: drag;
-`
+    backgroundColor: '$darkest',
 
-export const WindowTitle = styled.h1`
-    grid-area: WindowTitle;
+    userSelect: 'none',
+    appRegion: 'drag'
+})
 
-    color: ${props => props.theme.comment};
-    text-align: center;
-    font-size: 12px;
-`
+export const WindowTitle = styled('h1', {
+    gridArea: 'WindowTitle',
 
-export const ActionsContainer = styled.div<ActionsContainerProps>`
-    height: 100%;
-    ${props => { if (props.plataform === 'macos') return 'margin-left: 10px;' }}
+    color: '$text',
+    textAlign: 'center',
+    fontSize: '12px'
+})
 
-    display: ${props => (props.hidden) ? 'none' : 'block'};
-    grid-area: ${props => (props.plataform === 'macos')
-        ? 'MacOsActionsContainer'
-        : 'DefaultActionsContainer'
-    };
+export const ActionsContainer = styled('div', {
+    height: '100%',
 
-    text-align: ${props => (props.plataform === 'macos') ? 'left' : 'right'};
-`
-
-export const MacOsAction = styled.button<MacOsActionProps>`
-    height: 100%;
-    width: 20px;
-
-    background: none;
-    border: none;
-    
-    svg {
-        height: 12px;
-        width: 12px;
-        
-        -webkit-app-region: none;
-        
-        fill: ${props => {
-        if (props.action === 'close') return props.theme.red
-        else if (props.action === 'minimize') return props.theme.yellow
-        else return props.theme.green
-    }};
-    }
-`
-
-export const DefaultAction = styled.button<DefaultActionProps>`
-    height: 100%;
-    width: 45px;
-
-    display: ${props => (props.hidden) ? 'none' : ''};
-
-    background: none;
-    border: none;
-
-    -webkit-app-region: none;
-
-    svg {
-        height: 16px;
-        width: 16px;
-
-        fill: ${props => props.theme.comment};
-    }
-
-    &:hover {
-        svg {
-            fill: ${props => props.theme.foreground};
+    variants: {
+        plataform: {
+            MacOs: {
+                marginLeft: '10px',
+                gridArea: 'MacOsActionsContainer',
+                textAlign: 'left'
+            },
+            Default: {
+                gridArea: 'DefaultActionsContainer',
+                textAlign: 'right'
+            }
+        },
+        hidden: {
+            true: {
+                display: 'none'
+            },
+            false: {
+                display: 'block'
+            }
         }
+    },
 
-        background: ${props => (props.isClose) ? props.theme.red : props.theme.darker};
+    defaultVariants: {
+        plataform: 'Default',
+        hidden: false
     }
-`
+})
 
-export interface ActionsContainerProps {
-    plataform: 'macos' | 'default'
-    hidden?: boolean
-}
+export const MacOsAction = styled('button', {
+    height: '100%',
+    width: '20px',
 
-export interface MacOsActionProps {
-    action: 'close' | 'minimize' | 'maximize'
-}
+    background: 'none',
+    border: 'none',
 
-export interface DefaultActionProps {
-    hidden?: boolean
-    isClose?: boolean
-}
+    '& svg': {
+        height: '12px',
+        width: '12px',
+
+        appRegion: 'none'
+    },
+
+    variants: {
+        action: {
+            close: {
+                '& svg': {
+                    fill: '$red'
+                }
+            },
+            minimize: {
+                '& svg': {
+                    fill: '$yellow'
+                }
+            },
+            maximize: {
+                '& svg': {
+                    fill: '$green'
+                }
+            }
+        }
+    }
+})
+
+export const DefaultAction = styled('button', {
+    height: '100%',
+    width: '45px',
+
+    background: 'none',
+    border: 'none',
+
+    appRegion: 'none',
+
+    '& svg': {
+        height: '16px',
+        width: '16px',
+
+        fill: '$text'
+    },
+
+    variants: {
+        hidden: {
+            true: {
+                display: 'none'
+            }
+        },
+        action: {
+            close: {
+                '&:hover': {
+                    background: '$red'
+                }
+            },
+            default: {
+                '&:hover': {
+                    background: '$darker'
+                }
+            }
+        }
+    },
+
+    defaultVariants: {
+        hidden: false,
+        action: 'default'
+    }
+})
