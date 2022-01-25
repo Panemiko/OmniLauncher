@@ -1,4 +1,5 @@
 
+// Dracula Theme
 const Theme = {
     darkest: '#1C1E26',
     darker: '#282a36',
