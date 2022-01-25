@@ -9,7 +9,7 @@ export const Container = styled.header`
     display: grid;
     align-items: center;
     grid-template-columns: 135px auto 135px;
-    grid-template-areas: '- WindowTitle DefaultActionsContainer';
+    grid-template-areas: 'MacOsActionsContainer WindowTitle DefaultActionsContainer';
 
     background: ${props => props.theme.darkest};
 
@@ -25,12 +25,38 @@ export const WindowTitle = styled.h1`
     font-size: 12px;
 `
 
-export const DefaultActionsContainer = styled.div`
+export const ActionsContainer = styled.div<ActionsContainerProps>`
     height: 100%;
-    
-    grid-area: DefaultActionsContainer;
+    ${props => { if (props.plataform === 'macos') return 'margin-left: 10px;' }}
 
-    text-align: right;
+    display: ${props => (props.hidden) ? 'none' : 'block'};
+    grid-area: ${props => (props.plataform === 'macos')
+        ? 'MacOsActionsContainer'
+        : 'DefaultActionsContainer'
+    };
+
+    text-align: ${props => (props.plataform === 'macos') ? 'left' : 'right'};
+`
+
+export const MacOsAction = styled.button<MacOsActionProps>`
+    height: 100%;
+    width: 20px;
+
+    background: none;
+    border: none;
+    
+    svg {
+        height: 12px;
+        width: 12px;
+        
+        -webkit-app-region: none;
+        
+        fill: ${props => {
+        if (props.action === 'close') return props.theme.red
+        else if (props.action === 'minimize') return props.theme.yellow
+        else return props.theme.green
+    }};
+    }
 `
 
 export const DefaultAction = styled.button<DefaultActionProps>`
@@ -59,6 +85,15 @@ export const DefaultAction = styled.button<DefaultActionProps>`
         background: ${props => (props.isClose) ? props.theme.red : props.theme.darker};
     }
 `
+
+export interface ActionsContainerProps {
+    plataform: 'macos' | 'default'
+    hidden?: boolean
+}
+
+export interface MacOsActionProps {
+    action: 'close' | 'minimize' | 'maximize'
+}
 
 export interface DefaultActionProps {
     hidden?: boolean
