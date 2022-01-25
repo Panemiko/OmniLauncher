@@ -1,15 +1,15 @@
-import { styled } from '../../style/stitches'
+import { styled } from '@stitches/react'
 
 export const Container = styled('header', {
     position: 'absolute',
 
     height: '30px',
-    weight: '100%',
+    width: '100%',
 
     display: 'grid',
     alignItems: 'center',
     gridTemplateColumns: '135px auto 135px',
-    gridTemplateAreas: 'MacOsActionsContainer WindowTitle DefaultActionsContainer',
+    gridTemplateAreas: '\'MacOsActionsContainer WindowTitle DefaultActionsContainer\'',
 
     backgroundColor: '$darkest',
 
@@ -68,6 +68,10 @@ export const MacOsAction = styled('button', {
         width: '12px',
 
         appRegion: 'none'
+    },
+
+    '& svg:hover': {
+        filter: 'brightness(90%)'
     },
 
     variants: {
