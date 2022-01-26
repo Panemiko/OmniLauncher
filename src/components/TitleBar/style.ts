@@ -1,8 +1,6 @@
 import { styled } from '@stitches/react'
 
 export const Container = styled('header', {
-    position: 'absolute',
-
     height: '30px',
     width: '100%',
 
