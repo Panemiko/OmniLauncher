@@ -9,7 +9,7 @@ export const Container = styled('header', {
     display: 'grid',
     alignItems: 'center',
     gridTemplateColumns: '135px auto 135px',
-    gridTemplateAreas: '\'MacOsActionsContainer WindowTitle DefaultActionsContainer\'',
+    gridTemplateAreas: '\'MacOsActions WindowTitle DefaultActions\'',
 
     backgroundColor: '$darkest',
 
@@ -32,11 +32,11 @@ export const ActionsContainer = styled('div', {
         plataform: {
             MacOs: {
                 marginLeft: '10px',
-                gridArea: 'MacOsActionsContainer',
+                gridArea: 'MacOsActions',
                 textAlign: 'left'
             },
             Default: {
-                gridArea: 'DefaultActionsContainer',
+                gridArea: 'DefaultActions',
                 textAlign: 'right'
             }
         },
