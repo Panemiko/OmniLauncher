@@ -45,6 +45,8 @@ export default class Application {
             titleBarStyle: 'hidden',
             fullscreenable: false,
             show: false,
+            minWidth: 800,
+            minHeight: 400,
             webPreferences: {
                 devTools: isDev,
                 preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
