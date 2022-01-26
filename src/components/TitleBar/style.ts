@@ -67,7 +67,7 @@ export const MacOsAction = styled('button', {
         height: '12px',
         width: '12px',
 
-        appRegion: 'none'
+        appRegion: 'no-drag'
     },
 
     '& svg:hover': {
@@ -102,7 +102,7 @@ export const DefaultAction = styled('button', {
     background: 'none',
     border: 'none',
 
-    appRegion: 'none',
+    appRegion: 'no-drag',
 
     '& svg': {
         height: '16px',
