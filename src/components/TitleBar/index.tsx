@@ -62,10 +62,10 @@ export default function TitleBar() {
                 <DefaultAction tabIndex={-1} onClick={electron.window.minimize}>
                     <VscChromeMinimize />
                 </DefaultAction>
-                <DefaultAction hidden={!isMax} tabIndex={-1} onClick={electron.window.maximize}>
+                <DefaultAction hidden={isMax} tabIndex={-1} onClick={electron.window.maximize}>
                     <VscChromeMaximize />
                 </DefaultAction>
-                <DefaultAction hidden={isMax} tabIndex={-1} onClick={electron.window.unmaximize}>
+                <DefaultAction hidden={!isMax} tabIndex={-1} onClick={electron.window.unmaximize}>
                     <VscChromeRestore />
                 </DefaultAction>
                 <DefaultAction tabIndex={-1} action="close" onClick={electron.window.close}>
