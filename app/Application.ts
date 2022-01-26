@@ -27,9 +27,9 @@ export default class Application {
      */
     async run(): Promise<void> {
         await this.app.whenReady()
+        await this.createMainWindow()
         await this.loadAppEvents()
         await this.loadIpcEvents()
-        await this.createMainWindow()
         await this.loadContent()
     }
 
@@ -44,6 +44,7 @@ export default class Application {
             backgroundColor: '#1F1A26',
             titleBarStyle: 'hidden',
             fullscreenable: false,
+            show: false,
             webPreferences: {
                 devTools: isDev,
                 preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
@@ -73,6 +74,10 @@ export default class Application {
                 await this.createMainWindow()
             }
         })
+
+        this.win.once('ready-to-show', () => {
+            this.win.show()
+        })
     }
 
     private async loadIpcEvents(): Promise<void> {
@@ -91,6 +96,14 @@ export default class Application {
 
         ipcMain.on('window-minimize', () => {
             BrowserWindow.getFocusedWindow()?.minimize()
+        })
+
+        this.win.on('maximize', () => {
+            this.win.webContents.send('window-on-maximize-update')
+        })
+
+        this.win.on('unmaximize', () => {
+            this.win.webContents.send('window-on-maximize-update')
         })
 
         ipcMain.handle('window-is-maximized', () => {
