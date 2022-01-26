@@ -11,7 +11,11 @@ const api = {
 
         async minimize() { ipcRenderer.send('window-minimize') },
 
-        async isMaximized() { return await ipcRenderer.invoke('window-is-maximized') }
+        async isMaximized() { return await ipcRenderer.invoke('window-is-maximized') },
+
+        async onMaximizeUpdate(callback: IpcRendererEventCallback) {
+            ipcRenderer.on('window-on-maximize-update', callback)
+        }
     },
     os: {
         async getPlataform() { return await ipcRenderer.invoke('os-get-plataform') }
