@@ -1,5 +1,5 @@
 import type { IconType } from 'react-icons'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     VscCircleLargeFilled,
     VscChromeMinimize,
@@ -19,12 +19,15 @@ import useElectron from '../../hooks/useElectron'
 export default function TitleBar() {
 
     const electron = useElectron()
-    const [macActionHidden, setMacActionHidden] = useState<boolean>()
-    const [defaultActionHidden, setDefaultActionHidden] = useState<boolean>()
-    const [maxHidden, setMaxHidden] = useState<boolean>()
-    const [unmaxHidden, setUnmaxHidden] = useState<boolean>()
+    const [isMacAction, setIsMacAction] = useState(false)
+    const [isMax, setIsMax] = useState(false)
 
     electron.window.onMaximizeUpdate(updateDefaultMaximize)
+
+    useEffect(() => {
+        loadActionByPlataform()
+        updateDefaultMaximize()
+    }, [])
 
     async function maximizeUpdate() {
         if (await electron.window.isMaximized()) electron.window.unmaximize()
@@ -32,20 +35,18 @@ export default function TitleBar() {
     }
 
     async function loadActionByPlataform() {
-        const isMac = await electron.os.getPlataform() === 'darwin'
-        setMacActionHidden(isMac)
-        setDefaultActionHidden(!isMac)
+        const isMac = ((await electron.os.getPlataform()) === 'darwin')
+        setIsMacAction(isMac)
     }
 
     async function updateDefaultMaximize() {
         const isMaximized = await electron.window.isMaximized()
-        setMaxHidden(isMaximized)
-        setUnmaxHidden(!isMaximized)
+        setIsMax(isMaximized)
     }
 
     return (
         <Container>
-            <ActionsContainer hidden={macActionHidden} plataform="MacOs">
+            <ActionsContainer hidden={!isMacAction} plataform="MacOs">
                 <MacOsAction tabIndex={-1} action="close">
                     <VscCircleLargeFilled onClick={electron.window.close} />
                 </MacOsAction>
@@ -57,14 +58,14 @@ export default function TitleBar() {
                 </MacOsAction>
             </ActionsContainer>
             <WindowTitle>Omni Launcher</WindowTitle>
-            <ActionsContainer hidden={defaultActionHidden} plataform="Default">
+            <ActionsContainer hidden={isMacAction} plataform="Default">
                 <DefaultAction tabIndex={-1} onClick={electron.window.minimize}>
                     <VscChromeMinimize />
                 </DefaultAction>
-                <DefaultAction hidden={maxHidden} tabIndex={-1} onClick={electron.window.maximize}>
+                <DefaultAction hidden={!isMax} tabIndex={-1} onClick={electron.window.maximize}>
                     <VscChromeMaximize />
                 </DefaultAction>
-                <DefaultAction hidden={unmaxHidden} tabIndex={-1} onClick={electron.window.unmaximize}>
+                <DefaultAction hidden={isMax} tabIndex={-1} onClick={electron.window.unmaximize}>
                     <VscChromeRestore />
                 </DefaultAction>
                 <DefaultAction tabIndex={-1} action="close" onClick={electron.window.close}>

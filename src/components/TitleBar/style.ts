@@ -52,7 +52,7 @@ export const ActionsContainer = styled('div', {
 
     defaultVariants: {
         plataform: 'Default',
-        hidden: false
+        hidden: true
     }
 })
 
@@ -136,7 +136,7 @@ export const DefaultAction = styled('button', {
     },
 
     defaultVariants: {
-        hidden: false,
-        action: 'default'
+        action: 'default',
+        hidden: false
     }
 })
