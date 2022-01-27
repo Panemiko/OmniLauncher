@@ -1,9 +1,9 @@
 import { styled } from '@stitches/react'
 
 export const Container = styled('div', {
-    height: 'auto',
     width: '35%',
-    maxWidth: '500px',
+    maxWidth: '450px',
+    minHeight: 'calc(100vh - 30px)',
 
     backgroundColor: '$darker'
 })
