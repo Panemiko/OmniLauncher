@@ -3,7 +3,7 @@ import { Container, Icon, Name } from './style'
 
 export default function InstanceSelection(props: InstanceSelectionProps) {
     return (
-        <Container>
+        <Container active={props.active}>
             <Icon src={props.icon} />
             <Name>{props.name}</Name>
         </Container>
@@ -13,4 +13,5 @@ export default function InstanceSelection(props: InstanceSelectionProps) {
 export interface InstanceSelectionProps {
     icon: string
     name: string
+    active?: boolean
 }

@@ -15,13 +15,25 @@ export const Container = styled('button', {
     '&:hover': {
         backgroundColor: '$dark',
         cursor: 'pointer'
+    },
+
+    variants: {
+        active: {
+            true: {
+                backgroundColor: '$dark'
+            }
+        }
+    },
+
+    defaultVariants: {
+        active: false
     }
 })
 
 export const Icon = styled('img', {
-    height: '50px',
-    width: '50px',
-    margin: '0 17px',
+    height: '40px',
+    width: '40px',
+    margin: '0 20px',
 
     borderRadius: '5px'
 })
