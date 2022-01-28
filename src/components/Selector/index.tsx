@@ -1,11 +1,11 @@
 import React from 'react'
 import { Container } from './style'
-import AccountDisplay from '../AccountDisplay'
+import SettingsButton from '../SettingsButton'
 
 export default function Selector() {
     return (
         <Container>
-            <AccountDisplay />
+            <SettingsButton />
         </Container>
     )
 }
