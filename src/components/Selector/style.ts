@@ -17,7 +17,5 @@ export const InstanceSeparator = styled('h1', {
 })
 
 export const SeparatorLine = styled('hr', {
-    margin: '10px 15px',
-
     border: '1px solid $contrast'
 })

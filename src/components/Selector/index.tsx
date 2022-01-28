@@ -7,7 +7,6 @@ export default function Selector() {
     return (
         <Container>
             <SettingsButton />
-            <SeparatorLine />
             <InstanceSeparator>Instances</InstanceSeparator>
             <InstanceSelection
                 icon="https://cdn.discordapp.com/attachments/860285578875502593/936464116414042163/placeholder.png"
