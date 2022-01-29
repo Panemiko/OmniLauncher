@@ -1,28 +1,23 @@
 import { styled } from '@stitches/react'
 import { IoMdSettings } from 'react-icons/io'
 
-export const BaseButton = styled('button', {
-    height: '100%',
-
-    background: 'none',
-    border: 'none',
-
-    '&:hover': {
-        backgroundColor: '$tertiary',
-        cursor: 'pointer'
-    }
-})
-
 export const Container = styled('div', {
     height: '70px',
     width: '100%',
 
-    display: 'flex'
+    padding: '0 20px',
+
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+
+    '&:hover': {
+        background: '$tertiary',
+        cursor: 'pointer'
+    }
 })
 
-export const AccountContainer = styled(BaseButton, {
-    width: 'calc(100% - 70px)',
-
+export const AccountContainer = styled('a', {
     display: 'flex',
     alignItems: 'center'
 })
@@ -30,7 +25,8 @@ export const AccountContainer = styled(BaseButton, {
 export const Avatar = styled('img', {
     height: '42px',
     width: '42px',
-    margin: '10px 20px',
+
+    marginRight: '20px',
 
     borderRadius: '10px',
 
@@ -38,33 +34,39 @@ export const Avatar = styled('img', {
 })
 
 export const UsernameContainer = styled('div', {
-    height: 'fit-content',
-    width: 'calc(100% - 42px)',
+    display: 'flex',
+    flexDirection: 'column',
 
     textAlign: 'left',
 
     userSelect: 'none'
 })
 
-export const Username = styled('h1', {
+export const Username = styled('span', {
     color: '$text',
     fontSize: '18px',
     fontWeight: 'normal'
 })
 
-export const AccountType = styled('h2', {
+export const AccountType = styled('span', {
     color: '$contrast',
     fontSize: '14px'
 })
 
-export const SettingsContainer = styled(BaseButton, {
-    width: '70px'
+export const SettingsContainer = styled('a', {
+    height: '32px',
+    width: '32px',
+
+    padding: '3px',
+
+    '&:hover svg': {
+        fill: '$text'
+    }
 })
 
 export const SettingsIcon = styled(IoMdSettings, {
-    height: '30px',
-    width: '30px',
-    margin: 'auto',
+    height: '26px',
+    width: '26px',
 
-    fill: '$text'
+    fill: '$contrast'
 })

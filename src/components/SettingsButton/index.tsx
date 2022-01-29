@@ -14,9 +14,9 @@ export default function SettingsButton() {
     return (
         <Container>
             <AccountContainer>
-                <Avatar src="https://cdn.discordapp.com/attachments/860285578875502593/936464116414042163/placeholder.png" />
+                <Avatar src="https://i.imgur.com/z26ZOUY.png" />
                 <UsernameContainer>
-                    <Username>Panemiko</Username>
+                    <Username>Username</Username>
                     <AccountType>Mojang Account</AccountType>
                 </UsernameContainer>
             </AccountContainer>
