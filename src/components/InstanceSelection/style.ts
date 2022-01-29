@@ -1,14 +1,11 @@
 import { styled } from '@stitches/react'
 
-export const Container = styled('button', {
+export const Container = styled('a', {
     height: '60px',
     width: '100%',
 
     display: 'flex',
     alignItems: 'center',
-
-    background: 'none',
-    border: 'none',
 
     textAlign: 'start',
 
@@ -33,13 +30,14 @@ export const Container = styled('button', {
 export const Icon = styled('img', {
     height: '40px',
     width: '40px',
+
     margin: '0 20px',
 
     borderRadius: '5px'
 })
 
-export const Name = styled('h1', {
-    fontSize: '17px',
+export const Name = styled('span', {
     color: '$text',
+    fontSize: '17px',
     fontWeight: 'normal'
 })
