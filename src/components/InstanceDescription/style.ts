@@ -1,5 +1,7 @@
 import { styled } from '@stitches/react'
 
 export const Container = styled('div', {
-    gridArea: 'ID'
+    height: '100%',
+
+    backgroundColor: '$quaternary'
 })
