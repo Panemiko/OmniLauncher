@@ -10,7 +10,7 @@ import {
     SettingsIcon
 } from './style'
 
-export default function SettingsButton() {
+export default function GlobalSettingsButton() {
     return (
         <Container>
             <AccountContainer>

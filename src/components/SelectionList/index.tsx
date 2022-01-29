@@ -1,12 +1,12 @@
 import React from 'react'
 import { Container, InstancesContainer, InstanceSeparator } from './style'
-import SettingsButton from '../SettingsButton'
+import GlobalSettingsButton from '../GlobalSettingsButton'
 import InstanceSelection from '../InstanceSelection'
 
-export default function Selector() {
+export default function SelectionList() {
     return (
         <Container>
-            <SettingsButton />
+            <GlobalSettingsButton />
             <InstanceSeparator>Instances</InstanceSeparator>
             <InstancesContainer>
                 <InstanceSelection icon="https://i.imgur.com/z26ZOUY.png" name="Instance Name" />

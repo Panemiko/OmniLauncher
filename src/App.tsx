@@ -2,7 +2,7 @@ import React from 'react'
 import globalStyle from './style/Global'
 import Theme from './style/Theme'
 import TitleBar from './components/TitleBar'
-import Selector from './components/Selector'
+import SelectionList from './components/SelectionList'
 
 export default function App() {
     globalStyle()
@@ -10,7 +10,7 @@ export default function App() {
     return (
         <div className={Theme}>
             <TitleBar />
-            <Selector />
+            <SelectionList />
         </div>
     )
 }
