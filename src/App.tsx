@@ -1,16 +1,12 @@
 import React from 'react'
 import globalStyle from './style/Global'
 import Theme from './style/Theme'
-import TitleBar from './components/TitleBar'
-import SelectionList from './components/SelectionList'
+import Display from './components/Display'
 
 export default function App() {
     globalStyle()
 
     return (
-        <div className={Theme}>
-            <TitleBar />
-            <SelectionList />
-        </div>
+        <Display theme={Theme} />
     )
 }

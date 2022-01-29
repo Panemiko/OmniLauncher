@@ -4,6 +4,7 @@ export const Container = styled('header', {
     height: '30px',
     width: '100%',
 
+    gridArea: 'TB',
     display: 'grid',
     alignItems: 'center',
     gridTemplateColumns: '135px auto 135px',

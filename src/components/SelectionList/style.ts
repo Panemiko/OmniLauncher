@@ -2,9 +2,9 @@ import { styled } from '@stitches/react'
 
 export const Container = styled('div', {
     height: 'fit-content',
-    width: '35%',
     minHeight: 'calc(100vh - 30px)',
-    maxWidth: '450px',
+
+    gridArea: 'SL',
 
     backgroundColor: '$secondary'
 })
