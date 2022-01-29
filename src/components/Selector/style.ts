@@ -10,12 +10,16 @@ export const Container = styled('div', {
 })
 
 export const InstancesContainer = styled('div', {
-    height: 'calc(100% - 70px)',
+    height: 'calc(100vh - 18px - 70px - 30px)',
     width: '100%',
 
     display: 'block',
 
-    overflowY: 'scroll'
+    overflowY: 'hidden',
+
+    '&:hover': {
+        overflow: 'auto'
+    }
 })
 
 export const InstanceSeparator = styled('h1', {
