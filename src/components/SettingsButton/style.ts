@@ -8,7 +8,7 @@ export const BaseButton = styled('button', {
     border: 'none',
 
     '&:hover': {
-        backgroundColor: '$dark',
+        backgroundColor: '$tertiary',
         cursor: 'pointer'
     }
 })

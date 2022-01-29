@@ -13,14 +13,14 @@ export const Container = styled('button', {
     textAlign: 'start',
 
     '&:hover': {
-        backgroundColor: '$dark',
+        backgroundColor: '$tertiary',
         cursor: 'pointer'
     },
 
     variants: {
         active: {
             true: {
-                backgroundColor: '$dark'
+                backgroundColor: '$tertiary'
             }
         }
     },

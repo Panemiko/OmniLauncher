@@ -9,7 +9,7 @@ export const Container = styled('header', {
     gridTemplateColumns: '135px auto 135px',
     gridTemplateAreas: '\'MacOsActions WindowTitle DefaultActions\'',
 
-    backgroundColor: '$darkest',
+    backgroundColor: '$primary',
 
     userSelect: 'none',
     appRegion: 'drag'
@@ -127,7 +127,7 @@ export const DefaultAction = styled('button', {
             },
             default: {
                 '&:hover': {
-                    background: '$darker'
+                    background: '$secondary'
                 }
             }
         }
