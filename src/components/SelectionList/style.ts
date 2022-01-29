@@ -10,7 +10,8 @@ export const Container = styled('div', {
 })
 
 export const InstancesContainer = styled('div', {
-    height: 'calc(100vh - 18px - 70px - 30px)',
+    // Screen - InstanceSeparator - GlobalSettingsButton - TitleBar
+    height: 'calc(100vh - 38px - 70px - 30px)',
     width: '100%',
 
     display: 'block',
