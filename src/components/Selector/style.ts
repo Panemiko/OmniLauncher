@@ -1,11 +1,21 @@
 import { styled } from '@stitches/react'
 
 export const Container = styled('div', {
+    height: 'fit-content',
     width: '35%',
-    maxWidth: '450px',
     minHeight: 'calc(100vh - 30px)',
+    maxWidth: '450px',
 
-    backgroundColor: '$darker'
+    backgroundColor: '$secondary'
+})
+
+export const InstancesContainer = styled('div', {
+    height: 'calc(100% - 70px)',
+    width: '100%',
+
+    display: 'block',
+
+    overflowY: 'scroll'
 })
 
 export const InstanceSeparator = styled('h1', {
