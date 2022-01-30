@@ -5,3 +5,11 @@ export const Container = styled('div', {
 
     backgroundColor: '$quaternary'
 })
+
+export const ScreenshotsContainer = styled('div', {
+
+})
+
+export const Screenshot = styled('div', {
+
+})
