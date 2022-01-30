@@ -17,10 +17,6 @@ const globalStyle = globalCss({
 
         '&::-webkit-scrollbar-thumb': {
             background: '$contrast'
-        },
-
-        '&::-webkit-scrollbar-thumb:hover': {
-            background: '$quaternary'
         }
     },
 
