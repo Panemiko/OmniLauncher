@@ -1,5 +1,5 @@
 import { styled } from '@stitches/react'
-import { IoMdSettings } from 'react-icons/io'
+import { MdSettings } from 'react-icons/md'
 
 export const Container = styled('div', {
     height: '70px',
@@ -64,7 +64,7 @@ export const SettingsContainer = styled('a', {
     }
 })
 
-export const SettingsIcon = styled(IoMdSettings, {
+export const SettingsIcon = styled(MdSettings, {
     height: '26px',
     width: '26px',
 
