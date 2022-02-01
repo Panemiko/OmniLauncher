@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, InstancesContainer, InstanceSeparator } from './style'
-import GlobalSettingsButton from '../GlobalSettingsButton'
-import InstanceSelection from '../InstanceSelection'
+import GlobalSettingsButton from './GlobalSettingsButton'
+import InstanceSelection from './InstanceSelection'
 
 export default function SelectionList() {
     return (

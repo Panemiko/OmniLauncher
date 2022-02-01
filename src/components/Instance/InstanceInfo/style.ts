@@ -10,6 +10,7 @@ export const Container = styled('div', {
 
     backgroundColor: '$tertiary',
     backgroundSize: '100% 100%',
+    boxShadow: '0px -250px 80px -150px rgba(0,0,0,0.50) inset',
 
     aspectRatio: '8 / 3'
 })
@@ -17,3 +18,4 @@ export const Container = styled('div', {
 export const Name = styled('h1', {
     color: '$text'
 })
+
