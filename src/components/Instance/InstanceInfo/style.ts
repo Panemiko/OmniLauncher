@@ -1,5 +1,5 @@
 import { styled } from '@stitches/react'
-import { MdPlayArrow } from 'react-icons/md'
+import { MdPlayArrow, MdSettings } from 'react-icons/md'
 
 export const Container = styled('div', {
     width: '100%',
@@ -18,32 +18,53 @@ export const Container = styled('div', {
 })
 
 export const Name = styled('h1', {
-    color: '$text'
+    color: '$text',
+    fontWeight: 'normal'
 })
 
-export const ActionsContainer = styled('div', {
+export const ActionsContainer = styled('div', {})
 
+export const SettingsButton = styled('button', {
+    height: '40px',
+    width: '40px',
+
+    padding: 'auto',
+    marginRight: '12px',
+
+    background: 'none',
+    border: 'none',
+    borderRadius: '50%',
+
+    '&:hover svg': {
+        filter: 'brightness(80%)',
+        cursor: 'pointer'
+    }
+})
+
+export const SettingsButtonIcon = styled(MdSettings, {
+    height: '35px',
+    width: '35px',
+
+    fill: '$text'
 })
 
 export const PlayButton = styled('button', {
     height: '45px',
     width: '45px',
 
-    marginRight: '10px',
-
     backgroundColor: '$green',
     border: 'none',
     borderRadius: '50%',
 
     '&:hover': {
-        filter: 'brightness(110%)',
+        filter: 'brightness(90%)',
         cursor: 'pointer'
     }
 })
 
 export const PlayButtonIcon = styled(MdPlayArrow, {
-    height: '20px',
-    width: '20px',
+    height: '40px',
+    width: '40px',
 
     fill: '$text'
 })

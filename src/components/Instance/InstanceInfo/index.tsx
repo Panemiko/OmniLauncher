@@ -1,5 +1,13 @@
 import React from 'react'
-import { Container, Name, ActionsContainer, PlayButton, PlayButtonIcon } from './style'
+import {
+    Container,
+    Name,
+    ActionsContainer,
+    SettingsButton,
+    SettingsButtonIcon,
+    PlayButton,
+    PlayButtonIcon
+} from './style'
 
 export default function InstanceInfo(props: InstanceInfoProps) {
     return (
@@ -7,6 +15,7 @@ export default function InstanceInfo(props: InstanceInfoProps) {
             <Container css={{ backgroundImage: `url(${props.banner})` }}>
                 <Name>{props.name}</Name>
                 <ActionsContainer>
+                    <SettingsButton><SettingsButtonIcon /></SettingsButton>
                     <PlayButton><PlayButtonIcon /></PlayButton>
                 </ActionsContainer>
             </Container>
