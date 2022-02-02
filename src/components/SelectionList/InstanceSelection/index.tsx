@@ -3,7 +3,7 @@ import { Container, Icon, Name } from './style'
 
 export default function InstanceSelection(props: InstanceSelectionProps) {
     return (
-        <Container active={props.active}>
+        <Container tabIndex={0} active={props.active}>
             <Icon src={props.icon} />
             <Name>{props.name}</Name>
         </Container>
