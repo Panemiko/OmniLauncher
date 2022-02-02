@@ -7,8 +7,8 @@ export const Container = styled('div', {
 })
 
 export const InstancesContainer = styled('div', {
-    // Screen - InstanceSeparator - GlobalSettingsButton - TitleBar
-    height: 'calc(100vh - 38px - 70px - 30px)',
+    height: '100px',
+    minHeight: '100%',
     width: '100%',
 
     overflowY: 'hidden',
