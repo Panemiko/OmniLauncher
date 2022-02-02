@@ -4,7 +4,6 @@ export const Container = styled('a', {
     width: '145px',
 
     padding: '8px',
-    margin: '10px',
 
     display: 'flex',
     alignItems: 'center',
